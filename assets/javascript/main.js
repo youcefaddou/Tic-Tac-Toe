@@ -2,8 +2,10 @@
 const cells = document.querySelectorAll('[data-cell]');
 const gameStatus = document.querySelector('#gameStatus');
 const endGameStatus = document.querySelector('#endGameStatus');
-const playerOne = 'X'; const playerTwo = 'O';
+const playerOne = 'X'; 
+const playerTwo = 'O';
 let playerTurn = playerOne;
+const selectMode = document.querySelector("#mode")
 
 // Definition des schémas de jeu gagnants
 const winningPatterns = [
@@ -16,6 +18,8 @@ const winningPatterns = [
     [0, 4, 8],
     [2, 4, 6]
 ];
+
+document.querySelector('#reloadGame').addEventListener('click', reloadGame);
 
 // {once: true} indique que l'écouteur doit être exécuté au maximum une fois après l'ajout, retiré une fois executé
 cells.forEach(cell => {
@@ -44,7 +48,7 @@ function playGame(e) {
     }
 }
 
-//.some permet aussi d'effectuer des tests pour déterminer qui gagne
+//.some teste si au moins un élément du tableau passe le test implémenté par la fonction fournie
 // On va tester chaque combinaison, et sur chaque combinaison on se servira de .every ci-dessous pour déterminer si c'est le joueur 1 ou 2 qui a gagné
 function checkWin(playerTurn) {
     return winningPatterns.some(combination => {
@@ -54,7 +58,7 @@ function checkWin(playerTurn) {
     });
 }
 
-// .every permet de faire des tests, ici on verifie si chaque cellule a la marque du joueur 1 ou du J2
+// .every permet de tester si tous les éléments d'un tableau vérifient une condition donnée par une fonction en argument
 // [...cells] permet de déstructurer les cellules HTML et de les transformer en array  
 function checkDraw() {
     return [...cells].every(cell => {
@@ -87,7 +91,7 @@ function updateGameStatus(status) {
     endGameStatus.innerHTML = statusText;
 }
 
-function endGame() { document.getElementById('gameEnd').style.display = "block" }
+function endGame() { document.querySelector('#gameEnd').style.display = "block" }
 
 // recharge la page actuelle du navigateur, rafraîchissant ainsi tout le contenu de la page.
 function reloadGame() { window.location.reload() }  
