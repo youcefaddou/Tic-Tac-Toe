@@ -9,34 +9,15 @@
 </head>
 
 <body>
-  <div id="gameMode">
-
-    <label for="mode">Mode de jeu :</label>
-    <select id="mode">
-      <option value="pvp">Joueur 1 vs Joueur 2</option>
-      <option value="cpu">Joueur 1 vs Ordinateur</option>
-    </select>
-  </div>
-
-  <div id="gameEnd">
-    <p class="white" id="endGameStatus">...</p>
-    <input type="submit" value="Recommencer" id="reloadGame">
-  </div>
-
-  <div class="board">
-    <!-- data-cell est un attribut de données personnalisé. Les attributs data-* sont utilisés pour stocker des données supplémentaires sur les éléments HTML sans utiliser d'autres attributs non standard -->
-    <div class="cell" data-cell></div>
-    <div class="cell" data-cell></div>
-    <div class="cell" data-cell></div>
-    <div class="cell" data-cell></div>
-    <div class="cell" data-cell></div>
-    <div class="cell" data-cell></div>
-    <div class="cell" data-cell></div>
-    <div class="cell" data-cell></div>
-    <div class="cell" data-cell></div>
-  </div>
-
-  <h1 id="gameStatus">Le joueur 1 commence!</h1>
+  <header>
+    <h1>Jeu du Morpion</h1>
+  </header>
+  <main>
+    <section id="gameContainer"></section>
+    <div id="playerTurn"></div>
+    <div id="message"></div>
+    
+  </main>
   <script src="./assets/javascript/main.js"></script>
 </body>
 
