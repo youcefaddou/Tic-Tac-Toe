@@ -35,7 +35,7 @@ function playerMove(rowIndex, cellIndex) {
         } else if (isDraw()) {
             message.textContent = `Match nul !`
             gameOver = true
-        } else { // chgmt de joueur
+        } else { // chgmt de joueur, décla ternaire pour eviter les if else
             currentPlayer = currentPlayer === 'X' ? 'O' : 'X'
             document.querySelector('#playerTurn').textContent = `C'est au tour du joueur ${currentPlayer}`
         }
