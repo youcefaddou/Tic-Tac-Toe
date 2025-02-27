@@ -8,22 +8,50 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
-    height: 100vh; 
-    background-color: #f0f0f0; 
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
 }
 
-h1 {
+header {
     text-align: center;
-    margin-bottom: 80px;
+    margin-top: 20px;
     font-size: 40px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+
 }
 
+#gameMode {
+    display: flex;
+    justify-content: flex-start;
+    padding: 50px;
+    width: 100%
+}
+#modeBtn {
+    gap: 50px;
+    display: flex;
+    justify-content: space-between;
+    
+    #pvp, #cpu {
+        padding: 20px;
+        border-radius: 15px;
+        background-color: black;
+        color: azure;
+        box-shadow: inset 0 0 10px rgb(0, 225, 255) ;
+    }
+}
+#modeBtn #pvp:hover, #modeBtn #cpu:hover {
+    background-color: #365597;
+    scale: 1.1;
+}
 #gameContainer {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    width: 180px; 
-    height: 180px; 
+    grid-template-columns: repeat(3, 1fr);
+    width: 180px;
+    height: 180px;
+    margin: auto;
 }
 
 .cell {
@@ -33,21 +61,28 @@ h1 {
     justify-content: center;
     align-items: center;
     border: 2px solid black;
-    font-size: 26px;
+    font-size: 28px;
     cursor: pointer;
-    background-color: white; 
-    transition: background-color 0.3s; 
+    background-color: white;
+    transition: background-color 0.3s;
 }
 
 .cell:hover {
-    background-color: grey; 
+    background-color: grey;
 }
-#message {
-    margin-top: 40px;
-    font-size: 30px;
+
+#message,
+#playerTurn {
+    margin-top: 20px;
+    font-size: 28px;
     font-weight: bold;
     color: #365597;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
+
 #playerTurn {
     font-weight: bolder;
     margin-top: 40px;
